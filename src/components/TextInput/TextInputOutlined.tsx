@@ -296,6 +296,7 @@ class TextInputOutlined extends React.Component<ChildTextInputProps> {
               parentState={parentState}
               labelProps={labelProps}
               labelBackground={LabelBackground}
+              isRequired={isRequired}
             />
             {render?.({
               ...rest,
@@ -399,3 +400,4 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
   },
 });
+
