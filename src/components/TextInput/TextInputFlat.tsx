@@ -74,6 +74,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
       onFocus,
       forceFocus,
       onBlur,
+        isRequired,
       onChangeText,
       onLayoutAnimatedText,
       onLeftAffixLayoutChange,
@@ -319,7 +320,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
             minHeight,
           }}
         >
-          <InputLabel parentState={parentState} labelProps={labelProps} />
+          <InputLabel parentState={parentState} labelProps={labelProps} isRequired={isRequired} />
           {render?.({
             ...rest,
             ref: innerRef,
@@ -426,3 +427,4 @@ const styles = StyleSheet.create({
     paddingBottom: 2,
   },
 });
+
