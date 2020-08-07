@@ -21,6 +21,7 @@ const FOCUS_ANIMATION_DURATION = 150;
 export type TextInputProps = React.ComponentPropsWithRef<
   typeof NativeTextInput
 > & {
+  isRequired: boolean;
   /**
    * Mode of the TextInput.
    * - `flat` - flat input with an underline.
@@ -455,6 +456,7 @@ class TextInput extends React.Component<TextInputProps, State> {
         innerRef={(ref) => {
           this.root = ref;
         }}
+        isRequired={this.props.isRequired}
         onFocus={this.handleFocus}
         forceFocus={this.forceFocus}
         onBlur={this.handleBlur}
@@ -466,6 +468,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     ) : (
       <TextInputFlat
         {...rest}
+        isRequired={this.props.isRequired}
         value={this.state.value}
         parentState={this.state}
         innerRef={(ref) => {
@@ -484,3 +487,4 @@ class TextInput extends React.Component<TextInputProps, State> {
 }
 
 export default withTheme(TextInput);
+
