@@ -35,6 +35,7 @@ export type State = {
   rightLayout: { height: number | null; width: number | null };
 };
 export type ChildTextInputProps = {
+  isRequired: boolean;
   parentState: State;
   innerRef: (ref: NativeTextInput | null | undefined) => void;
   onFocus?: (args: any) => void;
@@ -75,9 +76,11 @@ export type InputLabelProps = {
   parentState: State;
   labelProps: LabelProps;
   labelBackground?: any;
+  isRequired: boolean;
 };
 export type LabelBackgroundProps = {
   labelProps: LabelProps;
   labelStyle: any;
   parentState: State;
 };
+
